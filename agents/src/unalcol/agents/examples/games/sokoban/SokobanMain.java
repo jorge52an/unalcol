@@ -3,6 +3,8 @@ package unalcol.agents.examples.games.sokoban;
 import unalcol.agents.Agent;
 import unalcol.agents.examples.labyrinth.Labyrinth;
 import unalcol.agents.examples.labyrinth.teseo.simple.RandomReflexTeseo;
+import unalcol.agents.examples.labyrinth.teseo.simple.TeseoSimple;
+import unalcol.agents.simulate.util.InteractiveAgentProgram;
 import unalcol.agents.simulate.util.SimpleLanguage;
 
 public class SokobanMain {
@@ -13,8 +15,8 @@ public class SokobanMain {
 	  }
 
 	  public static void main( String[] argv ){
-	    //  InteractiveAgentProgram p = new InteractiveAgentProgram( getLanguage() );
-//	    TeseoSimple p = new TeseoSimple();
+	    //InteractiveAgentProgram p = new InteractiveAgentProgram( getLanguage() );
+	    //TeseoSimple p = new TeseoSimple();
 	    RandomReflexTeseo p = new RandomReflexTeseo();
 	    p.setLanguage(getLanguage());
 	    SokobanBoardDrawer.DRAW_AREA_SIZE = 600;

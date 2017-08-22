@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file:///home/jgomez/git/unalcol/libs/types.jar" />
+    <libelement value="file:///home/jgomez/git/unalcol/libs/services.jar" />
+    <libelement value="file:///home/jgomez/git/unalcol/libs/optimization.jar" />
+    <libelement value="file:///home/jgomez/git/unalcol/libs/random.jar" />
+    <libelement value="file:///home/jgomez/git/unalcol/libs/gui.jar" />
+    <libelement value="file:///home/jgomez/git/unalcol/libs/defs.jar" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/agents/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/agents/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/agents">
+      <sourceFolder url="file://$MODULE_DIR$/agents/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/agents.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/data.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/defs.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/demo.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/evolution.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/gui.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/math.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/optimization.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/random.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mysql-connector-java-5.1.37-bin.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/services.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/types.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MODULE_DIR$/libs/services.jar!/doc" />
+          <root url="jar://$MODULE_DIR$/libs/types.jar!/doc" />
+        </JAVADOC>
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

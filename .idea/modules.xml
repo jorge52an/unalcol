@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/agents.iml" filepath="$PROJECT_DIR$/agents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data.iml" filepath="$PROJECT_DIR$/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/defs.iml" filepath="$PROJECT_DIR$/defs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/evolution.iml" filepath="$PROJECT_DIR$/evolution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gui.iml" filepath="$PROJECT_DIR$/gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn.iml" filepath="$PROJECT_DIR$/learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/math.iml" filepath="$PROJECT_DIR$/math.iml" />
+      <module fileurl="file://$PROJECT_DIR$/optimization.iml" filepath="$PROJECT_DIR$/optimization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/random.iml" filepath="$PROJECT_DIR$/random.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services.iml" filepath="$PROJECT_DIR$/services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/types.iml" filepath="$PROJECT_DIR$/types.iml" />
+    </modules>
+  </component>
+</project>
