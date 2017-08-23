@@ -1,5 +1,6 @@
 package unalcol.agents.examples.games.sokoban;
 
+import sis22017.jorge.JorgeAgent;
 import unalcol.agents.Agent;
 import unalcol.agents.examples.labyrinth.Labyrinth;
 import unalcol.agents.examples.labyrinth.teseo.simple.RandomReflexTeseo;
@@ -17,8 +18,7 @@ public class SokobanMain {
 	  public static void main( String[] argv ){
 	    //InteractiveAgentProgram p = new InteractiveAgentProgram( getLanguage() );
 	    //TeseoSimple p = new TeseoSimple();
-	    RandomReflexTeseo p = new RandomReflexTeseo();
-	    p.setLanguage(getLanguage());
+	    JorgeAgent p = new JorgeAgent();
 	    SokobanBoardDrawer.DRAW_AREA_SIZE = 600;
 	    SokobanBoardDrawer.CELL_SIZE = 40;
 	    Labyrinth.DEFAULT_SIZE = 15;

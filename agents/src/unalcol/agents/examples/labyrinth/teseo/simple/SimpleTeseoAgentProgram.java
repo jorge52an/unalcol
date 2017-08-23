@@ -55,12 +55,8 @@ public abstract class SimpleTeseoAgentProgram  implements AgentProgram{
           booleanValue();
       boolean PI = ( (Boolean) p.getAttribute(language.getPercept(3))).
           booleanValue();
-      boolean MT = ( (Boolean) p.getAttribute(language.getPercept(4))).
-          booleanValue();
-      boolean FAIL = ( (Boolean) p.getAttribute(language.getPercept(5))).
-              booleanValue();
 
-      int d = accion(PF, PD, PA, PI, MT, FAIL);
+      int d = accion(PF, PD, PA, PI, false, false);
       if (0 <= d && d < 4) {
         for (int i = 1; i <= d; i++) {
           cmd.add(language.getAction(3)); //rotate
