@@ -83,30 +83,47 @@ public class JorgeAgent implements AgentProgram
 
 	private byte getAction( boolean[] walls, boolean existsBlock, boolean existsMark )
 	{
+		boolean visitNewPosition = false;
+
 		if( !walls[0] )
 		{
 			Position newPosition = new Position( this.current.getX(), this.current.getY() + 1 );
 			if( !this.visited.contains( newPosition ) )
+			{
 				this.stack.push( newPosition );
+				visitNewPosition = true;
+			}
 		}
 		if( !walls[1] )
 		{
 			Position newPosition = new Position( this.current.getX() + 1, this.current.getY() );
 			if( !this.visited.contains( newPosition ) )
+			{
 				this.stack.push( newPosition );
+				visitNewPosition = true;
+			}
 		}
 		if( !walls[2] )
 		{
 			Position newPosition = new Position( this.current.getX(), this.current.getY() - 1 );
 			if( !this.visited.contains( newPosition ) )
+			{
 				this.stack.push( newPosition );
+				visitNewPosition = true;
+			}
 		}
 		if( !walls[3] )
 		{
 			Position newPosition = new Position( this.current.getX() - 1, this.current.getY() );
 			if( !this.visited.contains( newPosition ) )
+			{
 				this.stack.push( newPosition );
+				visitNewPosition = true;
+			}
 		}
+
+		if( !visitNewPosition )
+			return 4; //Play
 
 		Position goal = this.stack.pop();
 		ArrayList<Byte> actionsToGoal = this.getActionsToGoal( goal );
@@ -166,6 +183,8 @@ public class JorgeAgent implements AgentProgram
 				return new Action( "advance" );
 			case 3:
 				return new Action( "play" );
+			case 4:
+				return new Action( "no_op" );
 		}
 
 		return new Action( "no_op" );
