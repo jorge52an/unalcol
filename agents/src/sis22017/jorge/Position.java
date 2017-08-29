@@ -53,7 +53,7 @@ public class Position
 		if( this.getClass() != object.getClass() )
 			return false;
 
-		Position other = (Position) object;
+		Position other = ( Position ) object;
 
 		return this.x == other.getX() && this.y == other.getY();
 	}
