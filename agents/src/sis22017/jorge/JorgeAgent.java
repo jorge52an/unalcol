@@ -219,6 +219,11 @@ public class JorgeAgent implements AgentProgram
 
 			if( allVisited )
 			{
+				byte[][] instance = new byte[this.maxX - this.minX][this.maxY - this.minY];
+				for( Position position: this.blocks )
+				{
+					//instance[][]
+				}
 				return 4; //Play
 			}
 			else

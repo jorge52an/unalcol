@@ -2,14 +2,14 @@ package sis22017.jorge;
 
 public class Board
 {
-	private byte[] instance;
+	private byte[][] instance;
 
-	public Board( byte[] instance )
+	public Board( byte[][] instance )
 	{
 		this.instance = instance;
 	}
 
-	public byte[] getInstance()
+	public byte[][] getInstance()
 	{
 		return instance;
 	}
@@ -21,7 +21,8 @@ public class Board
 		int result = 1;
 
 		for( int i = 0; i < this.instance.length; i++ )
-			result = prime * result + this.instance[i];
+			for( int j = 0; j < this.instance[i].length; j++ )
+				result = prime * result + this.instance[i][j];
 
 		return result;
 	}
@@ -39,8 +40,9 @@ public class Board
 		Board other = ( Board ) object;
 
 		for( int i = 0; i < this.instance.length; i++ )
-			if( this.instance[i] != other.getInstance()[i] )
-				return false;
+			for( int j = 0; j < this.instance[i].length; j++ )
+				if( this.instance[i][j] != other.getInstance()[i][j] )
+					return false;
 
 		return true;
 	}
