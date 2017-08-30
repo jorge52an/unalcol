@@ -11,7 +11,7 @@ public class JorgeAgent implements AgentProgram
 	private ArrayDeque<Byte> commands;
 	private Stack<Position> stack;
 	private HashSet<Position> visited;
-	private ArrayDeque<Position> path;
+	private Stack<Position> path;
 	private Position current;
 	private Byte direction;
 
@@ -25,7 +25,7 @@ public class JorgeAgent implements AgentProgram
 		this.commands = new ArrayDeque<>();
 		this.stack = new Stack<>();
 		this.visited = new HashSet<>();
-		this.path = new ArrayDeque<>();
+		this.path = new Stack<>();
 		this.current = new Position( 0, 0 );
 		this.visited.add( this.current );
 		this.path.add( this.current );
@@ -60,7 +60,8 @@ public class JorgeAgent implements AgentProgram
 
 	private boolean neighbor( Position current, Position goal )
 	{
-		return goal.getX() == current.getX() || goal.getY() == current.getY();
+		return ( goal.getX() == current.getX() && Math.abs( goal.getY() - current.getY() ) == 1 ) ||
+				( goal.getY() == current.getY() && Math.abs( goal.getX() - current.getX() ) == 1 );
 	}
 
 	private byte getRotationsByNextPosition( Position current, Position goal, byte direction )
@@ -94,12 +95,15 @@ public class JorgeAgent implements AgentProgram
 		}
 		else
 		{
-			Position current = this.path.remove();
+			Stack<Position> pathAux = new Stack<>();
+			Position current = this.path.pop();
+			pathAux.push( current );
 			byte direction = this.direction;
 			byte rotations;
 			while( true )
 			{
-				Position next = this.path.remove();
+				Position next = this.path.pop();
+				pathAux.push( next );
 
 				rotations = this.getRotationsByNextPosition( current, next, direction );
 				for( int i = 0; i < rotations; i++ )
@@ -113,6 +117,9 @@ public class JorgeAgent implements AgentProgram
 				if( this.neighbor( current, goal ) )
 					break;
 			}
+
+			while( !pathAux.isEmpty() )
+				this.path.push( pathAux.pop() );
 
 			rotations = this.getRotationsByNextPosition( current, goal, direction );
 
@@ -249,7 +256,7 @@ public class JorgeAgent implements AgentProgram
 						break;
 				}
 				this.visited.add( this.current );
-				this.path.add( this.current );
+				this.path.push( this.current );
 
 				return new Action( "advance" );
 			case 3:
