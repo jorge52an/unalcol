@@ -9,11 +9,19 @@ import java.util.*;
 public class JorgeAgent implements AgentProgram
 {
 	private ArrayDeque<Byte> commands;
+
+	//Scan
 	private Stack<Position> stack;
+	private HashSet<Position> blocks;
+	private HashSet<Position> marks;
 	private HashSet<Position> visited;
 	private Stack<Position> path;
 	private Position current;
 	private Byte direction;
+	private Byte minX;
+	private Byte minY;
+	private Byte maxX;
+	private Byte maxY;
 
 	public JorgeAgent()
 	{
@@ -24,12 +32,18 @@ public class JorgeAgent implements AgentProgram
 	{
 		this.commands = new ArrayDeque<>();
 		this.stack = new Stack<>();
+		this.blocks = new HashSet<>();
+		this.marks = new HashSet<>();
 		this.visited = new HashSet<>();
 		this.path = new Stack<>();
 		this.current = new Position( 0, 0 );
 		this.visited.add( this.current );
 		this.path.add( this.current );
 		this.direction = 0;
+		this.minX = 0;
+		this.minY = 0;
+		this.maxX = 0;
+		this.maxY = 0;
 	}
 
 	private int module( int value, int divider )
@@ -175,6 +189,11 @@ public class JorgeAgent implements AgentProgram
 			}
 		}
 
+		if( existsBlock && !this.blocks.contains( this.current ) )
+			this.blocks.add( this.current );
+		if( existsMark && !this.marks.contains( this.current ) )
+			this.marks.add( this.current );
+
 		Position goal = null;
 		ArrayList<Byte> actionsToGoal;
 		if( visitNewPosition )
@@ -199,7 +218,9 @@ public class JorgeAgent implements AgentProgram
 			}
 
 			if( allVisited )
+			{
 				return 4; //Play
+			}
 			else
 				actionsToGoal = this.getActionsToGoal( goal );
 		}
@@ -257,6 +278,15 @@ public class JorgeAgent implements AgentProgram
 				}
 				this.visited.add( this.current );
 				this.path.push( this.current );
+
+				if( this.current.getX() < this.minX )
+					this.minX = this.current.getX();
+				if( this.current.getY() < this.minY )
+					this.minY = this.current.getY();
+				if( this.current.getX() > this.maxX )
+					this.maxX = this.current.getX();
+				if( this.current.getY() > this.maxY )
+					this.maxY = this.current.getY();
 
 				return new Action( "advance" );
 			case 3:
