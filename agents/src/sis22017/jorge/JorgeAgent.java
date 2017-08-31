@@ -153,6 +153,94 @@ public class JorgeAgent implements AgentProgram
 		return new int[]{ this.maxY - y, x - this.minX };
 	}
 
+	private Board getNewBoard( Board board, int oldIndexOne, int oldIndexTwo, int newIndexOne, int newIndexTwo,
+							   int newValueOne, int newValueTwo )
+	{
+		byte[][] instance = board.getInstance();
+		byte[][] newInstance = new byte[instance.length][instance[0].length];
+		newInstance[oldIndexOne][oldIndexTwo] = ( byte ) newValueOne;
+		newInstance[newIndexOne][newIndexTwo] = ( byte ) newValueTwo;
+		for( int i = 0; i < instance.length; i++ )
+			for( int j = 0; j < instance[i].length; j++ )
+				if( i != oldIndexOne && i != newIndexOne && j != oldIndexTwo && j != newIndexTwo )
+					newInstance[i][j] = instance[i][j];
+
+		return new Board( newInstance );
+	}
+
+	private ArrayList<Node> getChildrens( Node node )
+	{
+		ArrayList<Node> childrens = new ArrayList<>();
+		for( int i = 0; i < node.getBoard().getInstance().length; i++ )
+			for( int j = 0; j < node.getBoard().getInstance()[i].length; j++ )
+				if( node.getBoard().getInstance()[i][j] == 1 )
+				{
+					if( i - 1 >= 0 )
+					{
+						if( node.getBoard().getInstance()[i - 1][j] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									4, 1 );
+						}
+						else if( node.getBoard().getInstance()[i - 1][j] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									4, 3 );
+						}
+					}
+					if( j + 1 < node.getBoard().getInstance()[i].length )
+					{
+						if( node.getBoard().getInstance()[i][j + 1] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									4, 1 );
+						}
+						else if( node.getBoard().getInstance()[i][j + 1] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									4, 3 );
+						}
+					}
+					if( i + 1 < node.getBoard().getInstance().length )
+					{
+						if( node.getBoard().getInstance()[i + 1][j] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									4, 1 );
+						}
+						else if( node.getBoard().getInstance()[i + 1][j] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									4, 3 );
+						}
+					}
+					if( j - 1 < node.getBoard().getInstance()[i].length )
+					{
+						if( node.getBoard().getInstance()[i][j - 1] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									4, 1 );
+						}
+						else if( node.getBoard().getInstance()[i][j - 1] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									4, 3 );
+						}
+					}
+				}
+				else if( node.getBoard().getInstance()[i][j] == 3 )
+				{
+
+				}
+
+		return childrens;
+	}
+
+	private ArrayList<Byte> getActionsToGoalNode( Node root )
+	{
+		return new ArrayList<>();
+	}
+
 	private byte getAction( boolean[] walls, boolean existsBlock, boolean existsMark )
 	{
 		boolean visitNewPosition = false;
@@ -245,8 +333,10 @@ public class JorgeAgent implements AgentProgram
 				instance[indexes[0]][indexes[1]] = 5;
 
 				Board initial = new Board( instance );
-				Node root = new Node( null, initial );
+				Node root = new Node( null, initial, 0, 0 );
+				this.resetValues();
 
+				//return 3;
 				return 4; //Play
 			}
 			else
