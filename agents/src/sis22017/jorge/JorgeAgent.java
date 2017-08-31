@@ -241,6 +241,12 @@ public class JorgeAgent implements AgentProgram
 					if( instance[indexes[0]][indexes[1]] == 0 )
 						instance[indexes[0]][indexes[1]] = 4;
 				}
+				int[] indexes = getIndexes( 0, 0 );
+				instance[indexes[0]][indexes[1]] = 5;
+
+				Board initial = new Board( instance );
+				Node root = new Node( null, initial );
+
 				return 4; //Play
 			}
 			else
