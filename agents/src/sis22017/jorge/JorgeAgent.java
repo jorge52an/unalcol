@@ -148,6 +148,11 @@ public class JorgeAgent implements AgentProgram
 		return actions;
 	}
 
+	private int[] getIndexes( int x, int y )
+	{
+		return new int[]{ this.maxY - y, x - this.minX };
+	}
+
 	private byte getAction( boolean[] walls, boolean existsBlock, boolean existsMark )
 	{
 		boolean visitNewPosition = false;
@@ -219,10 +224,22 @@ public class JorgeAgent implements AgentProgram
 
 			if( allVisited )
 			{
-				byte[][] instance = new byte[this.maxX - this.minX][this.maxY - this.minY];
+				byte[][] instance = new byte[( this.maxY - this.minY ) + 1][( this.maxX - this.minX ) + 1];
 				for( Position position: this.blocks )
 				{
-					//instance[][]
+					int[] indexes = getIndexes( position.getX(), position.getY() );
+					instance[indexes[0]][indexes[1]] = 1;
+				}
+				for( Position position: this.marks )
+				{
+					int[] indexes = getIndexes( position.getX(), position.getY() );
+					instance[indexes[0]][indexes[1]] += 2;
+				}
+				for( Position position: this.visited )
+				{
+					int[] indexes = getIndexes( position.getX(), position.getY() );
+					if( instance[indexes[0]][indexes[1]] == 0 )
+						instance[indexes[0]][indexes[1]] = 4;
 				}
 				return 4; //Play
 			}
