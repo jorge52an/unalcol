@@ -153,6 +153,13 @@ public class JorgeAgent implements AgentProgram
 		return new int[]{ this.maxY - y, x - this.minX };
 	}
 
+	private int getCost( Board current, Board goal )
+	{
+
+
+		return 0;
+	}
+
 	private Board getNewBoard( Board board, int oldIndexOne, int oldIndexTwo, int newIndexOne, int newIndexTwo,
 							   int newValueOne, int newValueTwo )
 	{
@@ -214,7 +221,7 @@ public class JorgeAgent implements AgentProgram
 									4, 3 );
 						}
 					}
-					if( j - 1 < node.getBoard().getInstance()[i].length )
+					if( j - 1 >= 0 )
 					{
 						if( node.getBoard().getInstance()[i][j - 1] == 4 )
 						{
@@ -230,7 +237,58 @@ public class JorgeAgent implements AgentProgram
 				}
 				else if( node.getBoard().getInstance()[i][j] == 3 )
 				{
-
+					if( i - 1 >= 0 )
+					{
+						if( node.getBoard().getInstance()[i - 1][j] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									2, 1 );
+						}
+						else if( node.getBoard().getInstance()[i - 1][j] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									2, 3 );
+						}
+					}
+					if( j + 1 < node.getBoard().getInstance()[i].length )
+					{
+						if( node.getBoard().getInstance()[i][j + 1] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									2, 1 );
+						}
+						else if( node.getBoard().getInstance()[i][j + 1] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									2, 3 );
+						}
+					}
+					if( i + 1 < node.getBoard().getInstance().length )
+					{
+						if( node.getBoard().getInstance()[i + 1][j] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									2, 1 );
+						}
+						else if( node.getBoard().getInstance()[i + 1][j] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									2, 3 );
+						}
+					}
+					if( j - 1 >= 0 )
+					{
+						if( node.getBoard().getInstance()[i][j - 1] == 4 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									2, 1 );
+						}
+						else if( node.getBoard().getInstance()[i][j - 1] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									2, 3 );
+						}
+					}
 				}
 
 		return childrens;

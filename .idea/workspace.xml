@@ -4,7 +4,6 @@
     <list default="true" id="4bdecfcf-3d43-4ffb-8d34-d7783251da77" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java" />
     </list>
     <ignored path="$PROJECT_DIR$/agents/bin/" />
     <ignored path="$PROJECT_DIR$/data/bin/" />
@@ -42,18 +41,19 @@
       <file leaf-file-name="JorgeAgent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="336" column="35" lean-forward="true" selection-start-line="336" selection-start-column="35" selection-end-line="336" selection-end-column="35" />
+            <state relative-caret-position="530">
+              <caret line="155" column="4" lean-forward="false" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-                <element signature="e#6420#6421#0" expanded="true" />
-                <element signature="e#6451#6452#0" expanded="true" />
+                <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+                <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -62,13 +62,9 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
+            <state relative-caret-position="700">
               <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
                 <element signature="e#538#539#0" expanded="true" />
               </folding>
             </state>
@@ -179,10 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,6 +197,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,12 +320,14 @@
       <workItem from="1503983726655" duration="117000" />
       <workItem from="1504058518151" duration="12073000" />
       <workItem from="1504136045051" duration="7115000" />
-      <workItem from="1504198575371" duration="5925000" />
+      <workItem from="1504198575371" duration="5978000" />
+      <workItem from="1504204598634" duration="13000" />
+      <workItem from="1504841012694" duration="4152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60017000" />
+    <option name="totallyTimeSpent" value="64235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
@@ -337,14 +335,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -354,12 +351,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -375,7 +373,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java</url>
-          <line>339</line>
+          <line>397</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
@@ -445,14 +443,15 @@
           <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -495,14 +494,15 @@
           <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,14 +545,15 @@
           <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,14 +574,15 @@
           <caret line="161" column="30" lean-forward="true" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,14 +625,15 @@
           <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,13 +802,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
+        <state relative-caret-position="700">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
             <element signature="e#538#539#0" expanded="true" />
           </folding>
         </state>
@@ -813,18 +812,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="336" column="35" lean-forward="true" selection-start-line="336" selection-start-column="35" selection-end-line="336" selection-end-column="35" />
+        <state relative-caret-position="530">
+          <caret line="155" column="4" lean-forward="false" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#module#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getWalls#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotations#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#neighbor#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getRotationsByNextPosition#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="true" />
-            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
