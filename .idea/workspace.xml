@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bdecfcf-3d43-4ffb-8d34-d7783251da77" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/test1.skb" afterPath="$PROJECT_DIR$/agents/test1.skb" />
     </list>
@@ -332,12 +333,12 @@
       <workItem from="1504198575371" duration="5978000" />
       <workItem from="1504204598634" duration="13000" />
       <workItem from="1504841012694" duration="4152000" />
-      <workItem from="1505061892385" duration="9790000" />
+      <workItem from="1505061892385" duration="9803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74025000" />
+    <option name="totallyTimeSpent" value="74038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
