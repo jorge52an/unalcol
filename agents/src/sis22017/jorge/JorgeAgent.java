@@ -172,17 +172,18 @@ public class JorgeAgent implements AgentProgram
 
 		for( int i = 0; i < instance.length; i++ )
 			for( int j = 0; j < instance[i].length; j++ )
+			{
 				if( ( i != oldIndexOne || j != oldIndexTwo ) && ( i != newIndexOne || j != newIndexTwo ) )
-				{
 					newInstance[i][j] = instance[i][j];
-					if( instance[i][j] >= 5 )
-					{
-						agentIndexOne = i;
-						agentIndexTwo = j;
-					}
+				if( instance[i][j] >= 5 )
+				{
+					agentIndexOne = i;
+					agentIndexTwo = j;
 				}
+			}
 
-		newInstance[agentIndexOne][agentIndexTwo] = ( byte ) ( newInstance[agentIndexOne][agentIndexOne] / 5 );
+		if( agentIndexOne != newIndexOne && agentIndexTwo != newIndexTwo )
+			newInstance[agentIndexOne][agentIndexTwo] = ( byte ) ( newInstance[agentIndexOne][agentIndexOne] / 5 );
 		newInstance[oldIndexOne][oldIndexTwo] = ( byte ) ( newInstance[oldIndexOne][oldIndexTwo] * 5 + side );
 
 		return new Board( newInstance );
@@ -195,7 +196,8 @@ public class JorgeAgent implements AgentProgram
 			for( int j = 0; j < node.getBoard().getInstance()[i].length; j++ )
 				if( node.getBoard().getInstance()[i][j] == 1 )
 				{
-					if( i - 1 >= 0 )
+					if( i - 1 >= 0 && i + 1 < node.getBoard().getInstance().length &&
+							( node.getBoard().getInstance()[i + 1][j] == 2 || node.getBoard().getInstance()[i + 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i - 1][j] == 4 )
 						{
@@ -209,8 +211,23 @@ public class JorgeAgent implements AgentProgram
 									4, 3, 0 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i - 1][j] >= 20 &&
+								node.getBoard().getInstance()[i - 1][j] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									4, 1, 0 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i - 1][j] >= 10 &&
+								node.getBoard().getInstance()[i - 1][j] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									4, 3, 0 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( j + 1 < node.getBoard().getInstance()[i].length )
+					if( j + 1 < node.getBoard().getInstance()[i].length && j - 1 >= 0 &&
+							( node.getBoard().getInstance()[i][j - 1] == 2 || node.getBoard().getInstance()[i][j - 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j + 1] == 4 )
 						{
@@ -224,8 +241,23 @@ public class JorgeAgent implements AgentProgram
 									4, 3, 1 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i][j + 1] >= 20 &&
+								node.getBoard().getInstance()[i][j + 1] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									4, 1, 1 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i][j + 1] >= 10 &&
+								node.getBoard().getInstance()[i][j + 1] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									4, 3, 1 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( i + 1 < node.getBoard().getInstance().length )
+					if( i + 1 < node.getBoard().getInstance().length && i - 1 >= 0 &&
+							( node.getBoard().getInstance()[i - 1][j] == 2 || node.getBoard().getInstance()[i - 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i + 1][j] == 4 )
 						{
@@ -239,8 +271,23 @@ public class JorgeAgent implements AgentProgram
 									4, 3, 2 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i + 1][j] >= 20 &&
+								node.getBoard().getInstance()[i + 1][j] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									4, 1, 2 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i + 1][j] >= 10 &&
+								node.getBoard().getInstance()[i + 1][j] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									4, 3, 2 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( j - 1 >= 0 )
+					if( j - 1 >= 0 && j + 1 < node.getBoard().getInstance()[i].length &&
+							( node.getBoard().getInstance()[i][j + 1] == 2 || node.getBoard().getInstance()[i][j + 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j - 1] == 4 )
 						{
@@ -254,11 +301,26 @@ public class JorgeAgent implements AgentProgram
 									4, 3, 3 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i][j - 1] >= 20 &&
+								node.getBoard().getInstance()[i][j - 1] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									4, 1, 3 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i][j - 1] >= 10 &&
+								node.getBoard().getInstance()[i][j - 1] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									4, 3, 3 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
 				}
 				else if( node.getBoard().getInstance()[i][j] == 3 )
 				{
-					if( i - 1 >= 0 )
+					if( i - 1 >= 0 && i + 1 < node.getBoard().getInstance().length &&
+							( node.getBoard().getInstance()[i + 1][j] == 2 || node.getBoard().getInstance()[i + 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i - 1][j] == 4 )
 						{
@@ -272,8 +334,23 @@ public class JorgeAgent implements AgentProgram
 									2, 3, 0 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i - 1][j] >= 20 &&
+								node.getBoard().getInstance()[i - 1][j] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									2, 1, 0 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i - 1][j] >= 10 &&
+								node.getBoard().getInstance()[i - 1][j] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i - 1, j,
+									2, 3, 0 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( j + 1 < node.getBoard().getInstance()[i].length )
+					if( j + 1 < node.getBoard().getInstance()[i].length && j - 1 >= 0 &&
+							( node.getBoard().getInstance()[i][j - 1] == 2 || node.getBoard().getInstance()[i][j - 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j + 1] == 4 )
 						{
@@ -287,8 +364,23 @@ public class JorgeAgent implements AgentProgram
 									2, 3, 1 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i][j + 1] >= 20 &&
+								node.getBoard().getInstance()[i][j + 1] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									2, 1, 1 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i][j + 1] >= 10 &&
+								node.getBoard().getInstance()[i][j + 1] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j + 1,
+									2, 3, 1 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( i + 1 < node.getBoard().getInstance().length )
+					if( i + 1 < node.getBoard().getInstance().length && i - 1 >= 0 &&
+							( node.getBoard().getInstance()[i - 1][j] == 2 || node.getBoard().getInstance()[i - 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i + 1][j] == 4 )
 						{
@@ -302,8 +394,23 @@ public class JorgeAgent implements AgentProgram
 									2, 3, 2 );
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
+						else if( node.getBoard().getInstance()[i + 1][j] >= 20 &&
+								node.getBoard().getInstance()[i + 1][j] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									2, 1, 2 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i + 1][j] >= 10 &&
+								node.getBoard().getInstance()[i + 1][j] <= 13 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i + 1, j,
+									2, 3, 2 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
 					}
-					if( j - 1 >= 0 )
+					if( j - 1 >= 0 && j + 1 < node.getBoard().getInstance()[i].length &&
+							( node.getBoard().getInstance()[i][j + 1] == 2 || node.getBoard().getInstance()[i][j + 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j - 1] == 4 )
 						{
@@ -312,6 +419,20 @@ public class JorgeAgent implements AgentProgram
 							childrens.add( new Node( node, newBoard, 0 ) );
 						}
 						else if( node.getBoard().getInstance()[i][j - 1] == 2 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									2, 3, 3 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i][j - 1] >= 20 &&
+								node.getBoard().getInstance()[i][j - 1] <= 23 )
+						{
+							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
+									2, 1, 3 );
+							childrens.add( new Node( node, newBoard, 0 ) );
+						}
+						else if( node.getBoard().getInstance()[i][j - 1] >= 10 &&
+								node.getBoard().getInstance()[i][j - 1] <= 13 )
 						{
 							Board newBoard = this.getNewBoard( node.getBoard(), i, j, i, j - 1,
 									2, 3, 3 );

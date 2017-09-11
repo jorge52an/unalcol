@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bdecfcf-3d43-4ffb-8d34-d7783251da77" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/test1.skb" afterPath="$PROJECT_DIR$/agents/test1.skb" />
     </list>
@@ -43,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="329" column="33" lean-forward="true" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
+              <caret line="450" column="0" lean-forward="false" selection-start-line="450" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
@@ -61,8 +60,8 @@
       <file leaf-file-name="test1.skb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agents/test1.skb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="100">
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -333,16 +332,15 @@
       <workItem from="1504198575371" duration="5978000" />
       <workItem from="1504204598634" duration="13000" />
       <workItem from="1504841012694" duration="4152000" />
-      <workItem from="1505061892385" duration="9803000" />
+      <workItem from="1505061892385" duration="15218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74038000" />
+    <option name="totallyTimeSpent" value="79453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -363,7 +361,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -384,18 +382,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java</url>
-          <line>429</line>
+          <line>550</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java</url>
-          <line>329</line>
+          <line>450</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="92" />
+      <option name="time" value="118" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -817,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/test1.skb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="100">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -826,7 +824,7 @@
     <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="329" column="33" lean-forward="true" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
+          <caret line="450" column="0" lean-forward="false" selection-start-line="450" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
