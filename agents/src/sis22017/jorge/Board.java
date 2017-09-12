@@ -14,6 +14,11 @@ public class Board
 		return instance;
 	}
 
+	public void setInstance( byte[][] instance )
+	{
+		this.instance = instance;
+	}
+
 	@Override
 	public int hashCode()
 	{
