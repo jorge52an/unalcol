@@ -189,6 +189,12 @@ public class JorgeAgent implements AgentProgram
 		return new Board( newInstance );
 	}
 
+	private boolean isCorner( int i, int j, int lengthOne, int lengthTwo )
+	{
+		return ( i == 0 && j == 0 ) || ( i == 0 && j == lengthTwo - 1 ) || ( i == lengthOne - 1 && j == 0 ) ||
+				( i == lengthOne - 1 && j == lengthTwo - 1 );
+	}
+
 	private ArrayList<Node> getChildrens( Node node )
 	{
 		ArrayList<Node> childrens = new ArrayList<>();
@@ -197,6 +203,7 @@ public class JorgeAgent implements AgentProgram
 				if( node.getBoard().getInstance()[i][j] == 1 )
 				{
 					if( i - 1 >= 0 && i + 1 < node.getBoard().getInstance().length &&
+							!isCorner( i - 1, j, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i + 1][j] == 2 || node.getBoard().getInstance()[i + 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i - 1][j] == 4 )
@@ -227,6 +234,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( j + 1 < node.getBoard().getInstance()[i].length && j - 1 >= 0 &&
+							!isCorner( i, j + 1, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i][j - 1] == 2 || node.getBoard().getInstance()[i][j - 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j + 1] == 4 )
@@ -257,6 +265,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( i + 1 < node.getBoard().getInstance().length && i - 1 >= 0 &&
+							!isCorner( i + 1, j, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i - 1][j] == 2 || node.getBoard().getInstance()[i - 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i + 1][j] == 4 )
@@ -287,6 +296,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( j - 1 >= 0 && j + 1 < node.getBoard().getInstance()[i].length &&
+							!isCorner( i, j - 1, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i][j + 1] == 2 || node.getBoard().getInstance()[i][j + 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j - 1] == 4 )
@@ -320,6 +330,7 @@ public class JorgeAgent implements AgentProgram
 				else if( node.getBoard().getInstance()[i][j] == 3 )
 				{
 					if( i - 1 >= 0 && i + 1 < node.getBoard().getInstance().length &&
+							!isCorner( i - 1, j, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i + 1][j] == 2 || node.getBoard().getInstance()[i + 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i - 1][j] == 4 )
@@ -350,6 +361,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( j + 1 < node.getBoard().getInstance()[i].length && j - 1 >= 0 &&
+							!isCorner( i, j +1, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i][j - 1] == 2 || node.getBoard().getInstance()[i][j - 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j + 1] == 4 )
@@ -380,6 +392,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( i + 1 < node.getBoard().getInstance().length && i - 1 >= 0 &&
+							!isCorner( i + 1, j, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i - 1][j] == 2 || node.getBoard().getInstance()[i - 1][j] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i + 1][j] == 4 )
@@ -410,6 +423,7 @@ public class JorgeAgent implements AgentProgram
 						}
 					}
 					if( j - 1 >= 0 && j + 1 < node.getBoard().getInstance()[i].length &&
+							!isCorner( i, j - 1, node.getBoard().getInstance().length, node.getBoard().getInstance()[i].length ) &&
 							( node.getBoard().getInstance()[i][j + 1] == 2 || node.getBoard().getInstance()[i][j + 1] >= 4 ) )
 					{
 						if( node.getBoard().getInstance()[i][j - 1] == 4 )
