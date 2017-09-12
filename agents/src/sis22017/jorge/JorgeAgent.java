@@ -309,7 +309,7 @@ public class JorgeAgent implements AgentProgram
 			actions.add( ( byte ) 2 );
 		}
 
-		return new Node( node, goal, actions.size(), actions );
+		return new Node( node, goal, actions.size() + node.getCost(), actions );
 	}
 
 	private Board getNewBoard( Board board, int oldIndexOne, int oldIndexTwo, int newIndexOne, int newIndexTwo,
@@ -629,9 +629,9 @@ public class JorgeAgent implements AgentProgram
 		ArrayList<Byte> actions = new ArrayList<>();
 
 		PriorityQueue<Node> queue = new PriorityQueue<>( 1, ( Comparator<Node> ) ( nodeOne, nodeTwo ) -> {
-			if( nodeOne.getCost() < nodeTwo.getCost() )
+			if( nodeOne.getAllCost() < nodeTwo.getAllCost() )
 				return -1;
-			if( nodeOne.getCost() > nodeTwo.getCost() )
+			if( nodeOne.getAllCost() > nodeTwo.getAllCost() )
 				return 1;
 			return 0;
 		} );
