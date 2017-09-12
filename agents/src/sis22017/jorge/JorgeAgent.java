@@ -158,25 +158,37 @@ public class JorgeAgent implements AgentProgram
 	{
 		if( oldAgentIndexOne == newAgentIndexOne && oldAgentIndexTwo == newAgentIndexTwo )
 			return true;
-		if( goal.getInstance()[oldAgentIndexOne][oldAgentIndexTwo] != 2 && goal.getInstance()[oldAgentIndexOne][oldAgentIndexTwo] != 4 )
-			return false;
-
 		byte[][] instance = goal.getInstance();
 		instance[oldAgentIndexOne][oldAgentIndexTwo] = 25;
 		goal.setInstance( instance );
 
-		if( oldAgentIndexOne - 1 >= 0 && markPath( oldAgentIndexOne - 1, oldAgentIndexTwo,
-				newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
-			return true;
-		if( oldAgentIndexTwo + 1 < lengthTwo && markPath( oldAgentIndexOne, oldAgentIndexTwo + 1,
-				newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
-			return true;
-		if( oldAgentIndexOne + 1 < lengthOne && markPath( oldAgentIndexOne + 1, oldAgentIndexTwo,
-				newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
-			return true;
-		if( oldAgentIndexTwo - 1 >= 0 && markPath( oldAgentIndexOne, oldAgentIndexTwo - 1,
-				newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
-			return true;
+		if( oldAgentIndexOne - 1 >= 0 &&
+				( instance[oldAgentIndexOne - 1][oldAgentIndexTwo] == 2 || instance[oldAgentIndexOne - 1][oldAgentIndexTwo] == 4 ||
+						( instance[oldAgentIndexOne - 1][oldAgentIndexTwo] >= 5 && instance[oldAgentIndexOne - 1][oldAgentIndexTwo] <= 23 ) ) )
+		{
+			if( markPath( oldAgentIndexOne - 1, oldAgentIndexTwo, newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
+				return true;
+		}
+		if( oldAgentIndexTwo + 1 < lengthTwo &&
+				( instance[oldAgentIndexOne][oldAgentIndexTwo + 1] == 2 || instance[oldAgentIndexOne][oldAgentIndexTwo + 1] == 4 ||
+						( instance[oldAgentIndexOne][oldAgentIndexTwo + 1] >= 5 && instance[oldAgentIndexOne][oldAgentIndexTwo + 1] <= 23 ) ) )
+		{
+			if( markPath( oldAgentIndexOne, oldAgentIndexTwo + 1, newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
+				return true;
+		}
+		if( oldAgentIndexOne + 1 < lengthOne &&
+				( instance[oldAgentIndexOne + 1][oldAgentIndexTwo] == 2 || instance[oldAgentIndexOne + 1][oldAgentIndexTwo] == 4 ||
+						( instance[oldAgentIndexOne + 1][oldAgentIndexTwo] >= 5 && instance[oldAgentIndexOne + 1][oldAgentIndexTwo] <= 23 ) ) )
+		{
+			if( markPath( oldAgentIndexOne + 1, oldAgentIndexTwo, newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
+				return true;
+		}
+		if( oldAgentIndexTwo - 1 >= 0 && ( instance[oldAgentIndexOne][oldAgentIndexTwo - 1] == 2 || instance[oldAgentIndexOne][oldAgentIndexTwo - 1] == 4 ||
+				( instance[oldAgentIndexOne][oldAgentIndexTwo - 1] >= 5 && instance[oldAgentIndexOne][oldAgentIndexTwo - 1] <= 23 ) ) )
+		{
+			if( markPath( oldAgentIndexOne, oldAgentIndexTwo - 1, newAgentIndexOne, newAgentIndexTwo, lengthOne, lengthTwo, goal ) )
+				return true;
+		}
 
 		instance = goal.getInstance();
 		instance[oldAgentIndexOne][oldAgentIndexTwo] = 4;
@@ -200,7 +212,7 @@ public class JorgeAgent implements AgentProgram
 			if( i - 1 >= 0 && goal.getInstance()[i - 1][j] == 25 )
 			{
 				byte[][] instance = goal.getInstance();
-				instance[i - 1][j] = 4;
+				instance[i][j] = 4;
 				goal.setInstance( instance );
 				movements.add( ( byte ) 0 );
 				i--;
@@ -208,7 +220,7 @@ public class JorgeAgent implements AgentProgram
 			else if( j + 1 < lengthTwo && goal.getInstance()[i][j + 1] == 25 )
 			{
 				byte[][] instance = goal.getInstance();
-				instance[i][j + 1] = 4;
+				instance[i][j] = 4;
 				goal.setInstance( instance );
 				movements.add( ( byte ) 1 );
 				j++;
@@ -216,15 +228,15 @@ public class JorgeAgent implements AgentProgram
 			else if( i + 1 < lengthOne && goal.getInstance()[i + 1][j] == 25 )
 			{
 				byte[][] instance = goal.getInstance();
-				instance[i + 1][j] = 4;
+				instance[i][j] = 4;
 				goal.setInstance( instance );
 				movements.add( ( byte ) 2 );
 				i++;
 			}
-			else if( j - 1 < lengthTwo && goal.getInstance()[i][j - 1] == 25 )
+			else if( j - 1 >= 0 && goal.getInstance()[i][j - 1] == 25 )
 			{
 				byte[][] instance = goal.getInstance();
-				instance[i][j - 1] = 4;
+				instance[i][j] = 4;
 				goal.setInstance( instance );
 				movements.add( ( byte ) 3 );
 				j--;
@@ -246,7 +258,7 @@ public class JorgeAgent implements AgentProgram
 					movements.add( ( byte ) 2 );
 					i++;
 				}
-				else if( j - 1 < lengthTwo && goal.getInstance()[i][j - 1] >= 5 && goal.getInstance()[i][j - 1] <= 23 )
+				else if( j - 1 >= 0 && goal.getInstance()[i][j - 1] >= 5 && goal.getInstance()[i][j - 1] <= 23 )
 				{
 					movements.add( ( byte ) 3 );
 					j--;
@@ -600,9 +612,71 @@ public class JorgeAgent implements AgentProgram
 
 	private ArrayList<Byte> getActionsToGoalNode( Node root )
 	{
-		ArrayList<Node> childrens = this.getChildrens( root );
+		Node goal = null;
+		byte[][] instance = root.getBoard().getInstance();
+		byte[][] goalInstance = new byte[instance.length][instance[0].length];
+		for( int i = 0; i < instance.length; i++ )
+			for( int j = 0; j < instance[i].length; j++ )
+				if( instance[i][j] == 2 )
+					goalInstance[i][j] = 3;
+				else if( instance[i][j] == 1 )
+					goalInstance[i][j] = 4;
+				else if( instance[i][j] >= 5 && instance[i][j] <= 23 )
+					goalInstance[i][j] = ( byte ) ( instance[i][j] / 5 );
+				else
+					goalInstance[i][j] = instance[i][j];
+		Board goalBoard = new Board( goalInstance );
+		ArrayList<Byte> actions = new ArrayList<>();
 
-		return new ArrayList<>();
+		PriorityQueue<Node> queue = new PriorityQueue<>( 1, ( Comparator<Node> ) ( nodeOne, nodeTwo ) -> {
+			if( nodeOne.getCost() < nodeTwo.getCost() )
+				return -1;
+			if( nodeOne.getCost() > nodeTwo.getCost() )
+				return 1;
+			return 0;
+		} );
+		queue.add( root );
+		boolean foundGoal = false;
+		while( !foundGoal )
+		{
+			Node current = queue.remove();
+			ArrayList<Node> childrens = this.getChildrens( current );
+			queue.addAll( childrens );
+			for( int i = 0; i < childrens.size(); i++ )
+			{
+				instance = childrens.get( i ).getBoard().getInstance();
+				byte[][] instanceAux = new byte[instance.length][instance[0].length];
+				for( int j = 0; j < instance.length; j++ )
+					for( int k = 0; k < instance[j].length; k++ )
+						if( instance[j][k] >= 5 && instance[j][k] <= 23 )
+							instanceAux[j][k] = ( byte ) ( instance[j][k] / 5 );
+						else
+							instanceAux[j][k] = instance[j][k];
+				Board aux = new Board( instanceAux );
+
+				foundGoal = goalBoard.equals( aux );
+				if( foundGoal )
+				{
+					goal = childrens.get( i );
+					break;
+				}
+			}
+		}
+
+		boolean isRoot = false;
+		Node current = goal;
+		while( !isRoot )
+		{
+			ArrayList<Byte> actionsAux = current.getActions();
+			if( current == goal )
+				actions.addAll( actionsAux );
+			else
+				actions.addAll( 0, actionsAux );
+			current = goal.getParent();
+			isRoot = current.getParent() == null;
+		}
+
+		return actions;
 	}
 
 	private byte getAction( boolean[] walls, boolean existsBlock, boolean existsMark )
@@ -699,10 +773,12 @@ public class JorgeAgent implements AgentProgram
 				Board initial = new Board( instance );
 				Node root = new Node( null, initial, 0, new ArrayList<>() );
 				this.resetValues();
-				this.getActionsToGoalNode( root );
+				actionsToGoal = this.getActionsToGoalNode( root );
+				for( int i = 1; i < actionsToGoal.size(); i++ )
+					commands.add( actionsToGoal.get( i ) );
 
-				//return 3; //Play
-				return 4;
+				return 3; //Play
+				//return 4;
 			}
 			else
 				actionsToGoal = this.getActionsToGoal( goal );
