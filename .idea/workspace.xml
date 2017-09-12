@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4bdecfcf-3d43-4ffb-8d34-d7783251da77" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java" afterPath="$PROJECT_DIR$/agents/src/sis22017/jorge/Node.java" />
     </list>
     <ignored path="$PROJECT_DIR$/agents/bin/" />
     <ignored path="$PROJECT_DIR$/data/bin/" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="JorgeAgent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="643" column="0" lean-forward="false" selection-start-line="643" selection-start-column="0" selection-end-line="643" selection-end-column="0" />
+            <state relative-caret-position="4475">
+              <caret line="665" column="0" lean-forward="false" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
@@ -54,6 +53,7 @@
                 <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
                 <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+                <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -343,12 +343,12 @@
       <workItem from="1505061892385" duration="15815000" />
       <workItem from="1505174047590" duration="15549000" />
       <workItem from="1505199971202" duration="3225000" />
-      <workItem from="1505217923317" duration="13203000" />
+      <workItem from="1505217923317" duration="22745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112027000" />
+    <option name="totallyTimeSpent" value="121569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
@@ -373,7 +373,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42192692" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43632337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -393,18 +393,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java</url>
-          <line>779</line>
+          <line>665</line>
           <properties />
-          <option name="timeStamp" value="184" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java</url>
-          <line>643</line>
-          <properties />
-          <option name="timeStamp" value="188" />
+          <option name="timeStamp" value="220" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="191" />
+      <option name="time" value="221" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -478,6 +472,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -529,6 +524,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,6 +576,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,6 +606,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,6 +658,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -846,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/src/sis22017/jorge/JorgeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="643" column="0" lean-forward="false" selection-start-line="643" selection-start-column="0" selection-end-line="643" selection-end-column="0" />
+        <state relative-caret-position="4475">
+          <caret line="665" column="0" lean-forward="false" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#resetValues#0;class#JorgeAgent#0" expanded="false" />
@@ -859,6 +858,7 @@
             <element signature="method#getActionsToGoal#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#getNewBoard#0;class#JorgeAgent#0" expanded="false" />
             <element signature="method#isCorner#0;class#JorgeAgent#0" expanded="false" />
+            <element signature="method#getChildrens#0;class#JorgeAgent#0" expanded="false" />
           </folding>
         </state>
       </provider>

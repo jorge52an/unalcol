@@ -335,7 +335,7 @@ public class JorgeAgent implements AgentProgram
 			}
 
 		if( agentIndexOne != newIndexOne || agentIndexTwo != newIndexTwo )
-			newInstance[agentIndexOne][agentIndexTwo] = ( byte ) ( newInstance[agentIndexOne][agentIndexOne] / 5 );
+			newInstance[agentIndexOne][agentIndexTwo] = ( byte ) ( newInstance[agentIndexOne][agentIndexTwo] / 5 );
 		newInstance[oldIndexOne][oldIndexTwo] = ( byte ) ( newInstance[oldIndexOne][oldIndexTwo] * 5 + side );
 
 		return new Board( newInstance );
@@ -672,7 +672,7 @@ public class JorgeAgent implements AgentProgram
 				actions.addAll( actionsAux );
 			else
 				actions.addAll( 0, actionsAux );
-			current = goal.getParent();
+			current = current.getParent();
 			isRoot = current.getParent() == null;
 		}
 
